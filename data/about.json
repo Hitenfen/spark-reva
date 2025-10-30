@@ -1,0 +1,56 @@
+{
+  "title": "SPARK",
+  "tagline": "Student-driven Platform for Application Research & Knowledge",
+  "motto": "Igniting Innovation, Securing the Future.",
+  "description": "SPARK is a student-driven technical community at Reva University, Bangalore, focused on software development, open source innovation, and cybersecurity. The club provides a platform for students to learn, collaborate, and create impactful projects, preparing them for industry challenges, entrepreneurship, and research opportunities. By combining technical growth with practical exposure, SPARK aims to become the hub of innovation and security awareness on campus.",
+  "mottoExplanation": [
+    {
+      "title": "Igniting Innovation",
+      "points": [
+        "Represents the 'spark' of creativity and fresh ideas which our club wants to inspire in students.",
+        "Shows that SPARK is not just about learning but about creating solutions, experimenting, and pushing boundaries in programming, open-source, and emerging technologies.",
+        "The word 'igniting' gives a sense of energy, passion, and momentum, which fits perfectly for a student-driven community."
+      ]
+    },
+    {
+      "title": "Securing the Future",
+      "points": [
+        "Reflects the cybersecurity and digital safety foundation of our club.",
+        "Emphasizes preparing students to protect systems, data, and people in an increasingly digital world.",
+        "Means that through SPARK, students gain the skills and knowledge to secure their own professional futures in tech."
+      ]
+    }
+  ],
+  "mission": [
+    "To provide a platform for students to transform their ideas into working applications, websites, and solutions.",
+    "To foster innovation and entrepreneurship, helping students bring their creative ideas to reality.",
+    "To develop a strong culture of cybersecurity awareness and practices.",
+    "To encourage open-source contributions and collaborative development."
+  ],
+  "goals": [
+    {
+      "title": "Skill Development",
+      "description": "Provide hands-on learning in programming, cybersecurity, cloud, and modern technologies."
+    },
+    {
+      "title": "Innovation & Creativity",
+      "description": "Encourage members to build innovative solutions through projects and hackathons."
+    },
+    {
+      "title": "Cybersecurity Awareness",
+      "description": "Promote safe digital practices and create awareness about security challenges."
+    },
+    {
+      "title": "Open-Source Collaboration",
+      "description": "Motivate students to contribute to open-source projects and build teamwork skills."
+    },
+    {
+      "title": "Community & Networking",
+      "description": "Build a strong student tech community that connects with industry professionals, alumni, and peers."
+    },
+    {
+      "title": "Career Growth",
+      "description": "Prepare students with skills and experiences that strengthen their resumes and future opportunities."
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0a0a14;
+  color: white;
+  overflow-x: hidden;
+}
+
+main {
+  min-height: 100vh;
+}
+
+@layer base {
+  :root {
+    --background: #f9fafc;
+    --foreground: #1a1a1a;
+
+    --card: #ffffff;
+    --card-foreground: #1a1a1a;
+
+    --popover: #ffffff;
+    --popover-foreground: #1a1a1a;
+
+    --primary: #4f46e5; /* Indigo */
+    --primary-foreground: #ffffff;
+
+    --secondary: #e0e7ff; /* Soft Indigo Tint */
+    --secondary-foreground: #1e1b4b;
+
+    --muted: #f3f4f6;
+    --muted-foreground: #6b7280;
+
+    --accent: #a5b4fc;
+    --accent-foreground: #1e1b4b;
+
+    --destructive: #ef4444; /* Red */
+    --destructive-foreground: #ffffff;
+
+    --border: #e5e7eb;
+    --input: #d1d5db;
+    --ring: #4338ca;
+
+    /* Chart colors */
+    --chart-1: #6366f1; /* Indigo */
+    --chart-2: #10b981; /* Emerald */
+    --chart-3: #f59e0b; /* Amber */
+    --chart-4: #3b82f6; /* Blue */
+    --chart-5: #ec4899; /* Pink */
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

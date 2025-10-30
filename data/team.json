@@ -1,0 +1,26 @@
+{
+  "team": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "role": "President",
+      "department": "Computer Science",
+      "year": "2025",
+      "image": "/images/team/john.jpg",
+      "skills": ["Web Development", "Python", "Leadership"],
+      "linkedin": "https://linkedin.com/in/johndoe",
+      "github": "https://github.com/johndoe"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "role": "Technical Lead",
+      "department": "IT",
+      "year": "2024",
+      "image": "/images/team/jane.jpg",
+      "skills": ["React", "Node.js", "UI/UX"],
+      "linkedin": "https://linkedin.com/in/janesmith",
+      "github": ""
+    }
+  ]
+}
