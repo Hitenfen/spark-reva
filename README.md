@@ -47,10 +47,6 @@ spark-website/
     └── Hero.module.css
 ```
 
-## 👨‍💻 Credits
-
-**Main Developer**: [Hiten Tanwar](https://github.com/Hitenfen)  
-*This project was primarily developed by Hiten Tanwar. I contributed to responsiveness and other minor improvements.*
 
 ## 🚀 Getting Started
 
