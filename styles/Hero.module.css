@@ -6,11 +6,12 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: 
-    radial-gradient(ellipse at 20% 20%, rgba(102, 126, 234, 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 80%, rgba(240, 147, 251, 0.1) 0%, transparent 50%),
-    linear-gradient(180deg, #0a0a14 0%, #13132b 100%);
-  color: white;
+  /* Use Luna palette for hero: subtle cyan→teal→deep navy accents */
+  background:
+    radial-gradient(ellipse at 20% 20%, rgba(201,240,246,0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(47,111,153,0.06) 0%, transparent 50%),
+    linear-gradient(180deg, #062447 0%, #0b2f4a 100%);
+  color: hsl(var(--foreground));
 }
 
 /* Background Elements */
@@ -26,7 +27,7 @@
   height: 600px;
   top: -200px;
   right: -200px;
-  background: radial-gradient(circle, rgba(102, 126, 234, 0.2) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(127,198,207,0.28) 0%, transparent 70%);
   border-radius: 50%;
   filter: blur(40px);
   transition: transform 0.1s ease-out;
@@ -38,7 +39,7 @@
   height: 400px;
   bottom: -150px;
   left: -150px;
-  background: radial-gradient(circle, rgba(240, 147, 251, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(18,63,89,0.18) 0%, transparent 70%);
   border-radius: 50%;
   filter: blur(30px);
   transition: transform 0.1s ease-out;
@@ -47,12 +48,12 @@
 .circuit {
   position: absolute;
   inset: 0;
-  background-image: 
-    linear-gradient(90deg, transparent 99%, rgba(102, 126, 234, 0.1) 99%),
-    linear-gradient(0deg, transparent 99%, rgba(102, 126, 234, 0.1) 99%);
+  background-image:
+    linear-gradient(90deg, transparent 99%, rgba(127,198,207,0.08) 99%),
+    linear-gradient(0deg, transparent 99%, rgba(127,198,207,0.06) 99%);
   background-size: 30px 30px;
   animation: circuitPulse 8s ease-in-out infinite;
-  opacity: 0.3;
+  opacity: 0.28;
 }
 
 @keyframes circuitPulse {
@@ -145,9 +146,9 @@
   align-items: center;
   gap: 0.75rem;
   padding: 0.75rem 1.5rem;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(10, 20, 40, 0.25);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(130,200,229,0.12);
   border-radius: 50px;
   margin-bottom: 3rem;
   position: relative;
@@ -157,7 +158,7 @@
 .badgePulse {
   width: 8px;
   height: 8px;
-  background: #667eea;
+  background: #7fc6cf; /* soft cyan */
   border-radius: 50%;
   animation: badgePulse 2s ease-in-out infinite;
 }
@@ -166,12 +167,12 @@
   0%, 100% {
     transform: scale(1);
     opacity: 1;
-    box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.7);
+    box-shadow: 0 0 0 0 hsl(var(--primary) / 0.7);
   }
   50% {
     transform: scale(1.2);
     opacity: 0.8;
-    box-shadow: 0 0 0 10px rgba(102, 126, 234, 0);
+    box-shadow: 0 0 0 10px transparent;
   }
 }
 
@@ -179,7 +180,7 @@
   font-size: 0.9rem;
   font-weight: 500;
   letter-spacing: 0.5px;
-  color: rgba(255, 255, 255, 0.9);
+  color: hsl(var(--popover-foreground) / 0.95);
 }
 
 /* Heading */
@@ -190,7 +191,7 @@
 .mainTitle {
   font-size: clamp(1.5rem, 4vw, 2rem);
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.8);
+  color: hsl(var(--popover-foreground) / 0.92);
   margin-bottom: 0.5rem;
   letter-spacing: 2px;
 }
@@ -204,7 +205,7 @@
 .sparkText {
   font-size: clamp(4rem, 12vw, 8rem);
   font-weight: 900;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 30%, #f093fb 70%, #667eea 100%);
+  background: linear-gradient(135deg, #c9f0f6 0%, #7fc6cf 35%, #2f6f99 70%, #062447 100%);
   background-size: 200% 200%;
   background-clip: text;
   -webkit-background-clip: text;
@@ -217,11 +218,11 @@
 @keyframes sparkShine {
   0%, 100% {
     background-position: 0% 50%;
-    filter: drop-shadow(0 0 20px rgba(102, 126, 234, 0.3));
+    filter: drop-shadow(0 0 20px hsl(var(--primary) / 0.28));
   }
   50% {
     background-position: 100% 50%;
-    filter: drop-shadow(0 0 30px rgba(102, 126, 234, 0.6));
+    filter: drop-shadow(0 0 30px hsl(var(--primary) / 0.56));
   }
 }
 
@@ -232,7 +233,7 @@
   transform: translateX(-50%);
   width: 80%;
   height: 8px;
-  background: linear-gradient(90deg, transparent, #667eea, transparent);
+  background: linear-gradient(90deg, transparent, #2f6f99, transparent);
   border-radius: 4px;
   filter: blur(4px);
   animation: trailPulse 2s ease-in-out infinite;
@@ -258,13 +259,13 @@
 .mottoLine {
   flex: 1;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.5), transparent);
+  background: linear-gradient(90deg, transparent, rgba(127,198,207,0.5), transparent);
 }
 
 .motto {
   font-size: clamp(1.2rem, 3vw, 1.5rem);
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.9);
+  color: hsl(var(--popover-foreground) / 0.9);
   margin: 0;
   font-style: italic;
   letter-spacing: 1px;
@@ -279,7 +280,7 @@
 .description {
   font-size: clamp(1rem, 2vw, 1.2rem);
   line-height: 1.8;
-  color: rgba(255, 255, 255, 0.7);
+  color: hsl(var(--popover-foreground) / 0.9);
   margin: 0;
 }
 
@@ -291,9 +292,9 @@
   gap: 0;
   margin: 4rem 0;
   padding: 2rem;
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: hsl(var(--card) / 0.28);
+  backdrop-filter: blur(6px);
+  border: 1px solid hsl(var(--border) / 0.06);
   border-radius: 20px;
   max-width: 500px;
   margin-left: auto;
@@ -315,7 +316,7 @@
 .statNumber {
   font-size: 2.5rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -330,7 +331,7 @@
   transform: translate(-50%, -50%);
   width: 60px;
   height: 60px;
-  background: radial-gradient(circle, rgba(102, 126, 234, 0.3) 0%, transparent 70%);
+  background: radial-gradient(circle, hsl(var(--primary) / 0.3) 0%, transparent 70%);
   border-radius: 50%;
   animation: statGlow 2s ease-in-out infinite;
 }
@@ -342,7 +343,7 @@
 
 .statLabel {
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: hsl(var(--popover-foreground) / 0.78);
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 500;
@@ -351,7 +352,7 @@
 .statDivider {
   width: 1px;
   height: 40px;
-  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(180deg, transparent, hsl(var(--primary) / 0.2), transparent);
 }
 
 /* CTA Buttons */
@@ -379,15 +380,15 @@
 }
 
 .ctaPrimary {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+  color: hsl(var(--foreground));
   border: none;
-  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 10px 30px hsl(var(--primary) / 0.3);
 }
 
 .ctaPrimary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.5);
+  box-shadow: 0 15px 40px hsl(var(--primary) / 0.5);
 }
 
 .ctaHover {
@@ -396,7 +397,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.12), transparent);
   transition: left 0.5s;
 }
 
@@ -406,14 +407,14 @@
 
 .ctaSecondary {
   background: transparent;
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: hsl(var(--foreground));
+  border: 1px solid hsl(var(--border) / 0.6);
   position: relative;
 }
 
 .ctaSecondary:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: #667eea;
+  background: hsl(var(--primary) / 0.08);
+  border-color: hsl(var(--primary) / 0.5);
   transform: translateY(-3px);
 }
 
@@ -422,7 +423,7 @@
   inset: 0;
   border-radius: 12px;
   padding: 2px;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: subtract;
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -458,7 +459,7 @@
 .scrollLine {
   width: 1px;
   height: 60px;
-  background: linear-gradient(180deg, #667eea, transparent);
+  background: linear-gradient(180deg, hsl(var(--primary) / 1), transparent);
   animation: scrollLine 2s ease-in-out infinite;
 }
 
@@ -475,7 +476,7 @@
 
 .scrollText {
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: hsl(var(--popover-foreground) / 0.78);
   text-transform: uppercase;
   letter-spacing: 2px;
 }

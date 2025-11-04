@@ -110,6 +110,18 @@ export default function RootLayout({
         {/* Preload critical resources */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        {/*
+          Dev-time safeguard: guard removeChild to avoid HMR edge-case where
+          a stylesheet <link> is removed twice causing "parentNode is null".
+          This is a small, non-destructive runtime guard active only in dev.
+        */}
+        {process.env.NODE_ENV === 'development' && (
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `(function(){try{var orig=Node.prototype.removeChild;Node.prototype.removeChild=function(child){if(!child) return orig.call(this,child); if(child.parentNode!==this){/* already removed - ignore */ return child; } return orig.call(this,child)} }catch(e){console.warn('safeRemoveChild patch failed',e)} })()`
+            }}
+          />
+        )}
       </head>
       <body className={inter.className}>
         <Header />

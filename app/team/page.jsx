@@ -1,12 +1,28 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FaLinkedin, FaGithub, FaUser, FaGraduationCap, FaCalendarAlt } from 'react-icons/fa';
 import styles from '../../styles/Team.module.css';
 import teamData from '../../data/team.json';
 
 export default function TeamPage() {
   const [activeMember, setActiveMember] = useState(null);
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  useEffect(() => {
+    const handleKey = (e) => {
+      if (e.key === 'Escape') setSelectedImage(null);
+    };
+    if (selectedImage) {
+      document.addEventListener('keydown', handleKey);
+      // prevent background scroll while modal open
+      document.body.style.overflow = 'hidden';
+    }
+    return () => {
+      document.removeEventListener('keydown', handleKey);
+      document.body.style.overflow = '';
+    };
+  }, [selectedImage]);
 
   return (
     <div className={styles.page}>
@@ -14,13 +30,17 @@ export default function TeamPage() {
         <div className={styles.container}>
           <div className={styles.heroContent}>
             <div className={styles.titleSection}>
-              <h1 className={styles.title}>Our Team</h1>
+              <h1 className={`${styles.title} ${styles.halloweenTitle}`}>
+                <span aria-hidden="true">🎃</span> Our Team
+              </h1>
               <div className={styles.titleUnderline}></div>
             </div>
-            <p className={styles.subtitle}>
-              The passionate students driving SPARK forward at Reva University
+            <p className={`${styles.subtitle} ${styles.halloweenSubtitle}`}>
+              The passionate students driving SPARK forward at Reva University — a little spooky, a lot of creativity
             </p>
           </div>
+
+      {/* Background decorations removed as requested */}
         </div>
       </section>
 
@@ -35,7 +55,13 @@ export default function TeamPage() {
                 onMouseLeave={() => setActiveMember(null)}
               >
                 <div className={styles.cardHeader}>
-                  <div className={styles.memberImage}>
+                  <div
+                    className={styles.memberImage}
+                    role="button"
+                    tabIndex={0}
+                    onClick={() => setSelectedImage({ src: member.image, name: member.name })}
+                    onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setSelectedImage({ src: member.image, name: member.name }); }}
+                  >
                     <img src={member.image} alt={member.name} />
                     <div className={styles.imageOverlay}></div>
                   </div>
@@ -99,13 +125,25 @@ export default function TeamPage() {
                 We're always looking for passionate individuals who want to make a difference.
                 Join SPARK and be part of something amazing!
               </p>
-              <button className={styles.joinButton}>
-                Apply Now
-                <span className={styles.arrow}>→</span>
-              </button>
+              {/* Apply Now button removed as requested */}
             </div>
           </div>
         </div>
+
+        {/* Image Modal */}
+        {selectedImage && (
+          <div className={styles.modalOverlay} onClick={() => setSelectedImage(null)}>
+            <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+              <div className={styles.modalHeader}>
+                <h3 className={styles.modalTitle}>{selectedImage.name}</h3>
+                <button className={styles.modalClose} onClick={() => setSelectedImage(null)} aria-label="Close image">×</button>
+              </div>
+              <div className={styles.modalBody}>
+                <img src={selectedImage.src} alt={selectedImage.name} style={{ width: '100%', borderRadius: 8 }} />
+              </div>
+            </div>
+          </div>
+        )}
       </section>
     </div>
   );

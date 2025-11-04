@@ -24,40 +24,46 @@ main {
 
 @layer base {
   :root {
-    --background: #f9fafc;
-    --foreground: #1a1a1a;
+    /* Global site palette set to the Luna (cyan → teal → navy) theme */
+    /* Background: deep navy, Foreground: light off-white, Primary: soft cyan */
 
-    --card: #ffffff;
-    --card-foreground: #1a1a1a;
+    /* Background & foreground */
+    --background: 205 80% 9%;    /* deep navy base (~#062447) */
+    --foreground: 190 12% 95%;   /* light off-white */
 
-    --popover: #ffffff;
-    --popover-foreground: #1a1a1a;
+    --card: 205 75% 12%;         /* card panels slightly lighter than background */
+    --card-foreground: 190 12% 95%;
 
-    --primary: #4f46e5; /* Indigo */
-    --primary-foreground: #ffffff;
+    --popover: 190 12% 14%;
+    --popover-foreground: 190 10% 92%;
 
-    --secondary: #e0e7ff; /* Soft Indigo Tint */
-    --secondary-foreground: #1e1b4b;
+    /* Primary & secondary colors (Luna) */
+    --primary: 187 45% 65%;    /* soft cyan (~#7fc6cf) */
+    --primary-foreground: 190 6% 8%;
 
-    --muted: #f3f4f6;
-    --muted-foreground: #6b7280;
+    --secondary: 206 45% 40%;  /* mid blue (~#2f6f99) */
+    --secondary-foreground: 190 10% 92%;
 
-    --accent: #a5b4fc;
-    --accent-foreground: #1e1b4b;
+    /* Accent */
+    --accent: 187 60% 45%;
+    --accent-foreground: 190 6% 8%;
 
-    --destructive: #ef4444; /* Red */
-    --destructive-foreground: #ffffff;
+    --muted: 205 30% 18%;
+    --muted-foreground: 190 10% 72%;
 
-    --border: #e5e7eb;
-    --input: #d1d5db;
-    --ring: #4338ca;
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
 
-    /* Chart colors */
-    --chart-1: #6366f1; /* Indigo */
-    --chart-2: #10b981; /* Emerald */
-    --chart-3: #f59e0b; /* Amber */
-    --chart-4: #3b82f6; /* Blue */
-    --chart-5: #ec4899; /* Pink */
+    --border: 205 75% 12%;
+    --input: 205 75% 12%;
+    --ring: 187 45% 65%;
+
+    /* Chart colors adapted for palette */
+    --chart-1: 187 45% 65%;
+    --chart-2: 206 45% 40%;
+    --chart-3: 187 60% 45%;
+    --chart-4: 200 30% 20%;
+    --chart-5: 160 30% 30%;
 
     --radius: 0.5rem;
   }
