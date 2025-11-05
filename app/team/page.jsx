@@ -127,7 +127,7 @@ export default function TeamPage() {
               </p>
               <a
                 className={styles.joinButton}
-                href="https://form.typeform.com/to/h3b6Z3BB"
+                href="https://form.typeform.com/to/YBaYfdHS"
                 target="_blank"
                 rel="noopener noreferrer"
               >
