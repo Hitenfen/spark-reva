@@ -125,7 +125,15 @@ export default function TeamPage() {
                 We're always looking for passionate individuals who want to make a difference.
                 Join SPARK and be part of something amazing!
               </p>
-              {/* Apply Now button removed as requested */}
+              <a
+                className={styles.joinButton}
+                href="https://form.typeform.com/to/h3b6Z3BB"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Apply Now
+                <span className={styles.arrow}>→</span>
+              </a>
             </div>
           </div>
         </div>
